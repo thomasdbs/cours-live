@@ -1,0 +1,27 @@
+{
+  "name": "cours-live",
+  "version": "1.0.0",
+  "description": "cours dev canvas",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasdbs/canvas.git"
+  },
+  "author": "Thomas Dubois <thomasdubois085@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasdbs/canvas/issues"
+  },
+  "homepage": "https://github.com/thomasdbs/canvas#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
