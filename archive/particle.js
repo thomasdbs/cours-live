@@ -51,22 +51,6 @@ class Particle {
 
     }
 
-    line(xCoordinate,yCoordinate, particles,c) {
-        particles.forEach(p => {
-            if(this.distance(xCoordinate, yCoordinate, p.xCoordinate, p.yCoordinate) < 50){
-                c.beginPath()
-                c.moveTo(xCoordinate,yCoordinate)
-                c.lineTo(p.xCoordinate,p.yCoordinate)
-                c.strokeStyle = "#ffffff"
-                c.stroke()
-            }
-        });
-    }
-
-    distance(x1, y1, x2, y2){
-        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2) )
-    }
-
     draw(c) {
         c.beginPath();
         c.arc(this.xCoordinate, this.yCoordinate, Math.abs(this.radius), 0, Math.PI * 2)

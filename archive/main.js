@@ -18,7 +18,7 @@ var maxRadius = 35;
 
 var particles = [];
 
-const NUM_PARTICLES = 400;
+const NUM_PARTICLES = 800;
 
 for (var i = 0; i < NUM_PARTICLES; i++) {
 	var randomXCoordinate = Math.random() * canvasWidth;
@@ -42,7 +42,6 @@ const animate = () => {
     particles.forEach(p => {
         p.update(mouseX,mouseY,canvasWidth,canvasHeight,maxRadius);
         p.draw(c);
-		p.line(p.xCoordinate,p.yCoordinate, particles,c);
     });
     requestAnimationFrame(animate);
 };
