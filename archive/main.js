@@ -16,7 +16,6 @@ var canvasHeight = canvas.height;
 
 var maxRadius = 35;
 
-
 var particles = [];
 
 const NUM_PARTICLES = 400;
@@ -25,7 +24,7 @@ for (var i = 0; i < NUM_PARTICLES; i++) {
 	var randomXCoordinate = Math.random() * canvasWidth;
 	var randomYCoordinate = Math.random() * canvasHeight;
 	var randomRadius = Math.random() * 5;
-	particles.push(new Particle(randomXCoordinate,randomYCoordinate ,randomRadius))
+    particles.push(new Particle(randomXCoordinate,randomYCoordinate ,randomRadius))
 }
 
 canvas.onmousemove = function(e) {
@@ -34,17 +33,17 @@ canvas.onmousemove = function(e) {
 }
 
 window.addEventListener('resize', function() {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 
 const animate = () => {
-	c.clearRect(0, 0, canvas.width, canvas.height);
-	particles.forEach(p => {
-		p.update(mouseX,mouseY,canvasWidth,canvasHeight,maxRadius);
-		p.draw(c);
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.update(mouseX,mouseY,canvasWidth,canvasHeight,maxRadius);
+        p.draw(c);
 		p.line(p.xCoordinate,p.yCoordinate, particles,c);
-	});
-	requestAnimationFrame(animate);
+    });
+    requestAnimationFrame(animate);
 };
 animate();

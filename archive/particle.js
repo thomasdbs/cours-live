@@ -13,7 +13,7 @@ class Particle {
 
         //var colorArray = ['#C1EEFF', '#EAF8BF', '#006992', '#8D91C7'];
         //var colorArray = ['#C1EEFF', '#E1EFF6', '#006992', '#8D91C7'];
-        var colorArray = ['#f7427e', '#f7427e', '#f7427e', '#f7427e'];
+        var colorArray = ['#000000', '#000000', '#000000', '#000000'];
         this.color = colorArray[randomNumber];
 
         if (randomTrueOrFalse == 1) {
@@ -42,26 +42,25 @@ class Particle {
         if (this.yCoordinate + this.radius > canvasHeight || this.yCoordinate - this.radius < 0) {
             this.yVelocity = - this.yVelocity;
         };
+
         if (xDistance < 50 && xDistance > -50 && this.radius < maxRadius && yDistance < 50 && yDistance > -50) {
             this.radius += 2;
-            //this.color='#FEBFD2';
-            this.color='#f7427e';
+            this.color='#FEBFD2';
         }
         else if ((xDistance >= 50 && originalRadius < this.radius) || (xDistance <= -50 && originalRadius < this.radius) || (yDistance >= 50 && originalRadius < this.radius) || (yDistance <= -50 && originalRadius < this.radius)) {
             this.radius -= 2;
-            this.color='#f7427e';
+            this.color='#000000';
         };
 
     }
 
     line(xCoordinate,yCoordinate, particles,c) {
         particles.forEach(p => {
-            if(this.distance(xCoordinate, yCoordinate, p.xCoordinate, p.yCoordinate) < 100){
+            if(this.distance(xCoordinate, yCoordinate, p.xCoordinate, p.yCoordinate) < 50){
                 c.beginPath()
                 c.moveTo(xCoordinate,yCoordinate)
                 c.lineTo(p.xCoordinate,p.yCoordinate)
-                //c.strokeStyle = "#FEBFD2"
-                c.strokeStyle = "#f7427e"
+                c.strokeStyle = "#FEBFD2"
                 c.stroke()
             }
         });
