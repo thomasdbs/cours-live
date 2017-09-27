@@ -19,7 +19,7 @@ var maxRadius = 35;
 
 var particles = [];
 
-const NUM_PARTICLES = 400;
+const NUM_PARTICLES = 250;
 
 for (var i = 0; i < NUM_PARTICLES; i++) {
 	var randomXCoordinate = Math.random() * canvasWidth;
